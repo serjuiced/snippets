@@ -566,6 +566,7 @@ function goToPreviousStep() {
             pas.innerHTML = "Pasul 2";
             pasAlt.innerHTML = "Pasul 2";
             // $(".next.roviniete").css('top', "-" + slide2Height + "px");
+            $(".next.roviniete").css('top', "505px");
 
             break;
 
@@ -604,6 +605,7 @@ function goToNextStep(event) {
             pas.innerHTML = "Pasul 2";
             pasAlt.innerHTML = "Pasul 2";
             // $(".next.roviniete").css('top', "-" + slide2Height + "px");
+            $(".next.roviniete").css('top', "505px");
 
             break;
         case "Pasul 2":
@@ -752,7 +754,7 @@ window.onload = function () {
 
     initToast();
 
-    // $(".next.roviniete").css('top', "-" + slide1Height + "px");
+    $(".next.roviniete").css('top', "300px");
 
 
     getVignetteCategories();
