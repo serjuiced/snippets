@@ -1,6 +1,5 @@
 var slide1Height = $('#step-slide1 .collaborate-form-step').height();
 var slide2Height = $('#step-slide2 .collaborate-form-step').height();
-console.log("versiunea 23");
 
 console.log(slide1Height);
 console.log(slide2Height);
@@ -11,14 +10,14 @@ const nextButtonHTML = '<div class="next roviniete w-slider-arrow-right" role="b
 
 // if($("#step-slide1").is(":visible") == true){
 //     $(".next.roviniete").css('top', "-" + slide1Height + "px");
-//     	{
+//      {
 //         top: - slide1Height
 //       }
 //     );
 // }
 // if($("#step-slide2").is(":visible") == true){
 //     $(".next.roviniete").css(
-//     	{
+//      {
 //         top: - slide2Height
 //       }
 //     );
@@ -535,6 +534,9 @@ function goToPreviousStep() {
     const step2alt = document.getElementById('step2alt');
     const step3alt = document.getElementById('step3alt');
 
+    const nextWrapper = document.getElementById('nextBtnWrapperRov');
+    const prevWrapper = document.getElementById('prevBtnWrapperRov');
+
 
     switch (pas.innerHTML) {
         case "Pasul 1":
@@ -550,7 +552,10 @@ function goToPreviousStep() {
 
             pas.innerHTML = "Pasul 1";
             pasAlt.innerHTML = "Pasul 1";
-            $(".next.roviniete").css('top', "300px");
+            removeClass(nextWrapper, 'slider2');
+            addClass(nextWrapper, 'slider1');
+            removeClass(prevWrapper, 'slider2');
+            addClass(prevWrapper, 'slider1');
             break;
         case "Pasul 3":
             // getVignetteCategoryPrices(localStorage.getItem('selectedCategory'));
@@ -566,11 +571,16 @@ function goToPreviousStep() {
 
             pas.innerHTML = "Pasul 2";
             pasAlt.innerHTML = "Pasul 2";
-            // $(".next.roviniete").css('top', "-" + slide2Height + "px");
-            $(".next.roviniete").css('top', "505px");
 
+            if (!hasClass(nextWrapper, 'slider2')) {
+                addClass(nextWrapper, 'slider2');
+            }
             break;
 
+            if (!hasClass(prevWrapper, 'slider2')) {
+                addClass(prevWrapper, 'slider2');
+            }
+            break;
     }
 }
 
@@ -587,6 +597,9 @@ function goToNextStep(event) {
     const step1alt = document.getElementById('step1alt');
     const step2alt = document.getElementById('step2alt');
     const step3alt = document.getElementById('step3alt');
+
+    const nextWrapper = document.getElementById('nextBtnWrapperRov');
+    const prevWrapper = document.getElementById('prevBtnWrapperRov');
 
 
     switch (pas.innerHTML) {
@@ -605,8 +618,10 @@ function goToNextStep(event) {
 
             pas.innerHTML = "Pasul 2";
             pasAlt.innerHTML = "Pasul 2";
-            // $(".next.roviniete").css('top', "-" + slide2Height + "px");
-            $(".next.roviniete").css('top', "505px");
+
+            removeClass(nextWrapper, 'slider1');
+            addClass(nextWrapper, 'slider2');
+
 
             break;
         case "Pasul 2":
@@ -751,11 +766,13 @@ function addCategoryToLocalStorage(event) {
     localStorage.setItem('selectedCategory', event.target.value);
 }
 
+
 window.onload = function () {
 
     initToast();
 
-    $(".next.roviniete").css('top', "300px");
+    addClass(document.getElementById('nextBtnWrapperRov'), 'slider1');
+    addClass(document.getElementById('prevBtnWrapperRov'), 'slider1');
 
 
     getVignetteCategories();
@@ -804,3 +821,4 @@ window.onload = function () {
     // document.getElementById("modal").style.transition = "opacity 0.5s ease-in-out;";
 }
 
+console.log("VERSIUNEA 4");
