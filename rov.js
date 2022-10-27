@@ -839,4 +839,4 @@ window.onload = function () {
     // document.getElementById("modal").style.transition = "opacity 0.5s ease-in-out;";
 }
 
-console.log("VERSIUNEA 8");
+console.log("VERSIUNEA 9");
