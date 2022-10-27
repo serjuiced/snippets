@@ -582,9 +582,9 @@ function goToPreviousStep() {
             // break;
 
             if (!hasClass(prevWrapper, 'slider2')) {
-                addClass(prevWrapper, 'slider3');
+                addClass(prevWrapper, 'slider2');
                 removeClass(prevWrapper, 'slider1');
-                removeClass(prevWrapper, 'slider2');
+                removeClass(prevWrapper, 'slider3');
 
             }
             $(window).scrollTop(0);
