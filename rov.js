@@ -552,10 +552,13 @@ function goToPreviousStep() {
 
             pas.innerHTML = "Pasul 1";
             pasAlt.innerHTML = "Pasul 1";
+
             removeClass(nextWrapper, 'slider2');
             addClass(nextWrapper, 'slider1');
             removeClass(prevWrapper, 'slider2');
             addClass(prevWrapper, 'slider1');
+            $(window).scrollTop(0);
+
             break;
         case "Pasul 3":
             // getVignetteCategoryPrices(localStorage.getItem('selectedCategory'));
@@ -574,12 +577,18 @@ function goToPreviousStep() {
 
             if (!hasClass(nextWrapper, 'slider2')) {
                 addClass(nextWrapper, 'slider2');
+                removeClass(nextWrapper, 'slider1');
             }
-            break;
+            // break;
 
             if (!hasClass(prevWrapper, 'slider2')) {
-                addClass(prevWrapper, 'slider2');
+                addClass(prevWrapper, 'slider3');
+                removeClass(prevWrapper, 'slider1');
+                removeClass(prevWrapper, 'slider2');
+
             }
+            $(window).scrollTop(0);
+
             break;
     }
 }
@@ -621,7 +630,10 @@ function goToNextStep(event) {
 
             removeClass(nextWrapper, 'slider1');
             addClass(nextWrapper, 'slider2');
+            removeClass(prevWrapper, 'slider1');
+            addClass(prevWrapper, 'slider2');
 
+            $(window).scrollTop(0);
 
             break;
         case "Pasul 2":
@@ -646,6 +658,8 @@ function goToNextStep(event) {
 
             pas.innerHTML = "Pasul 3";
             pasAlt.innerHTML = "Pasul 3";
+            $(window).scrollTop(0);
+
             break;
         case "Pasul 3":
             break;
@@ -821,4 +835,4 @@ window.onload = function () {
     // document.getElementById("modal").style.transition = "opacity 0.5s ease-in-out;";
 }
 
-console.log("VERSIUNEA 4");
+console.log("VERSIUNEA 8");
