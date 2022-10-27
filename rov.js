@@ -659,6 +659,10 @@ function goToNextStep(event) {
             pas.innerHTML = "Pasul 3";
             pasAlt.innerHTML = "Pasul 3";
             $(window).scrollTop(0);
+            removeClass(prevWrapper, 'slider1');
+            removeClass(prevWrapper, 'slider2');
+            addClass(prevWrapper, 'slider3');
+            
 
             break;
         case "Pasul 3":
