@@ -25,13 +25,13 @@ const nextButtonHTML = '<div class="next roviniete w-slider-arrow-right" role="b
 
 var removedCategoryRowsNoTimes = 0;
 
-const base_url = 'https://app-dev.autodeal.ro/api/v1';
-const base_url_mobilpay = 'https://app-dev.autodeal.ro';
-const token = '100200|mFZqjzdO2Izu4e72eUSh0D0XctvkPQ2MMEDC78Hq';
+// const base_url = 'https://app-dev.autodeal.ro/api/v1';
+const base_url_mobilpay = 'https://app.autodeal.ro';
+// const token = '100200|mFZqjzdO2Izu4e72eUSh0D0XctvkPQ2MMEDC78Hq';
 
 
-// const base_url = 'https://app.autodeal.ro/api/v1';
-// const token = '113701|STygD85xaZB20zgdeOGtJXM5q2NX6bpwmIQ5JRxB';
+const base_url = 'https://app.autodeal.ro/api/v1';
+const token = '113701|STygD85xaZB20zgdeOGtJXM5q2NX6bpwmIQ5JRxB';
 
 const errorColor = "hsl(350 100% 13.5%)";
 const errorBg = "hsl(350 100% 66.5%)";
@@ -849,4 +849,4 @@ window.onload = function () {
     // document.getElementById("modal").style.transition = "opacity 0.5s ease-in-out;";
 }
 
-console.log("V0");
+console.log("V1");
